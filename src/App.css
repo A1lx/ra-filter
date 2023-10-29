@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+
+/* стили для компонентов в кучу */
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 30px;
+  margin-right: 2px;
+}
+
+.btn:last-child {
+  margin-right: 0;
+}
+
+.active {
+  background-color: goldenrod;
+}
+
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
