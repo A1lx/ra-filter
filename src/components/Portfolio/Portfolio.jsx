@@ -56,6 +56,7 @@ export const Portfolio = () => {
     img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/place200x290_3.png",
     category: "Flayers"
   }];
+  
   // начальное положение
   const initialState = {
     selected: "All",
@@ -63,18 +64,19 @@ export const Portfolio = () => {
   };
 
   const [state, setState] = useState(initialState);
-  // непонятная часть
+
   const onSelectFilter = filter => {
-    let state;
+    let currentState;
     if (filter === "All") {
-      state = initialState;
+      currentState = initialState;
     } else {
-      state = {
+      currentState = {
         selected: filter,
         projectsFiltered: projects.filter(elem => elem.category === filter)
       }
+      //console.log(currentState);
     }
-    setState(state);
+    setState(currentState);
   }
 
   return (
@@ -84,7 +86,7 @@ export const Portfolio = () => {
         selected={state.selected}
         onSelectFilter={onSelectFilter}
       />
-      <ProjectList projects={projects}/>
+      <ProjectList projects={state.projectsFiltered}/>
     </>
   )
 }
