@@ -1,9 +1,9 @@
 export const ProjectList = ({projects}) => {
 
-  let projectsElems = projects.map(elem => {
+  const projectsElems = projects.map((elem, index) => (
     // eslint-disable-next-line
-    return <img key={elem.img} src={elem.img} className="projects__img"/>
-  });
+    <img key={index} src={elem.img} className="projects__img" alt={`project-${index}`}/>
+  ));
 
   return (
     <div className="projects">
